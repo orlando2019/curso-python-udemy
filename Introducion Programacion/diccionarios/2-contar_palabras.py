@@ -1,17 +1,22 @@
 from operator import itemgetter
+import re
 # Esta funcion contamos palabras de una frase
 
-mensaje = 'En muchas partes del cuerpo como son las manos, las orejas o los pies, están representados todos los órganos y partes del cuerpo. Incidiendo sobre estas zonas se pueden crear arcos reflejos que actúen directamente sobre cualquier órgano del cuerpo y que solucionen cualquier anomalía que exista.'
+mensaje = 'En muchas partes del cuerpo como son las manos, las orejas o los pies,,,,,,.... están representados todos los órganos y partes del cuerpo. Incidiendo sobre estas zonas se pueden crear arcos Reflejos que Actúen ORLANDO ORLANDO ORLANDO Directamente sobre cualquier órgano del cuerpo y que solucionen cualquier anomalía? ORLANDO ORLANDO ORLANDO que exista.?¿¡¡!!'
 
-mensaje1 = mensaje.lower().replace('.', '').replace('?', '').replace(
-    '¿', '').replace('!', '').replace(',', '')
+#Expresion regular y sustituimos por espacios en blanco
+texto = re.sub(r"\,|\.|\?|\¿|\!|\¡", "", mensaje)
+#print(texto)
+
+mensaje1 = texto.lower()
+#print(mensaje1)
 
 
 def contar_palabras():
 
     mensaje2 = mensaje1.split()  # Convertimos la frase en un array
 
-    # rint(mensaje2)
+    # print(mensaje2)
 
     total_palabras = {}
 
@@ -26,7 +31,8 @@ def contar_palabras():
         sorted(total_palabras.items(), key=itemgetter(1), reverse=True))
 
     for k, v in palabras_ord.items():
-        print('{} : {}'.format(k, v))
+        #print('{} : {}'.format(k, v))
+        print(f'{k} : {v}')
 
 
 contar_palabras()
