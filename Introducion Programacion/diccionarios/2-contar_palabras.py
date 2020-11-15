@@ -2,10 +2,11 @@ from operator import itemgetter
 import re
 # Esta funcion contamos palabras de una frase
 
-mensaje = 'En muchas partes del cuerpo como son las manos, las orejas o los pies,,,,,,.... están representados todos los órganos y partes del cuerpo. Incidiendo sobre estas zonas se pueden crear arcos Reflejos que Actúen ORLANDO ORLANDO ORLANDO Directamente sobre cualquier órgano del cuerpo y que solucionen cualquier anomalía? ORLANDO ORLANDO ORLANDO que exista.?¿¡¡!!'
+mensaje = 'En muchas partes del cuerpo como son las manos, las orejas o los pies,,,,,,.... están representados todos los órganos y partes del cuerpo. Incidiendo sobre estas zonas se pueden crear arcos Reflejos que Actúen ORLANDO ORLANDO ORLANDO Directamente sobre cualquier órgano del cuerpo y que solucionen cualquier anomalía? ORLANDO ORLANDO11 221 22000 ORLANDO111 que exista.?¿¡¡!!'
 
 #Expresion regular y sustituimos por espacios en blanco
-texto = re.sub(r"\,|\.|\?|\¿|\!|\¡", "", mensaje)
+texto = re.sub(r"\,|\.|\?|\¿|\!|\d|\¡", "", mensaje)
+#texto1 = re.sub(r"\d", "", mensaje)
 #print(texto)
 
 mensaje1 = texto.lower()
